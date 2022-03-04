@@ -1,0 +1,13 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "host",
+    "app1",
+    "app2",
+    "app3"
+  ],
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
