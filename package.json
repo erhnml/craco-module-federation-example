@@ -2,11 +2,11 @@
   "name": "root",
   "private": true,
   "workspaces": [
-    "host",
-    "app1",
-    "app2",
-    "app3"
+    "host"
   ],
+  "scripts": {
+    "start": "lerna run start --parallel"
+  },
   "devDependencies": {
     "lerna": "^4.0.0"
   }
