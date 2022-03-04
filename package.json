@@ -3,7 +3,9 @@
   "private": true,
   "workspaces": [
     "host",
-    "app1"
+    "app1",
+    "app2",
+    "app3"
   ],
   "scripts": {
     "start": "lerna run start --parallel"
