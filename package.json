@@ -2,7 +2,8 @@
   "name": "root",
   "private": true,
   "workspaces": [
-    "host"
+    "host",
+    "app1"
   ],
   "scripts": {
     "start": "lerna run start --parallel"

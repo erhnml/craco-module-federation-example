@@ -1,14 +1,18 @@
 const { ModuleFederationPlugin } = require("webpack").container;
 
 module.exports = {
+  devServer: {
+    port: 3001,
+  },
   webpack: {
     plugins: {
       add: [
         new ModuleFederationPlugin({
-          name: "host",
-          remotes: {
-            app1: "app1@http://localhost:3001/remoteEntry.js",
+          name: "app1",
+          exposes: {
+            "./App": "./src/App",
           },
+          filename: "remoteEntry.js",
           shared: {
             react: { singleton: true },
             "react-dom": { singleton: true },
@@ -16,5 +20,12 @@ module.exports = {
         }),
       ],
     },
+    configure: (webpackConfig: any) => ({
+      ...webpackConfig,
+      output: {
+        ...webpackConfig.output,
+        publicPath: "auto",
+      },
+    }),
   },
 };
